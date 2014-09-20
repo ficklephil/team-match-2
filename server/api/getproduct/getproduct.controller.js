@@ -10,6 +10,13 @@ var Getproduct = require('./getproduct.model');
 // Get list of getproducts
 exports.index = function(req, res) {
 
+    var requestFts = req.params.id;
+
+    console.log(req.params);
+
+
+    console.log('fts' + requestFts);
+
     var articleUrl = 'http://api.shopstyle.com/api/v2/products?pid=uid8025-25655195-60&fts=red+dress&offset=0&limit=10';
 
     var options = {
