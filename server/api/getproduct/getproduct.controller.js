@@ -10,12 +10,30 @@ var Getproduct = require('./getproduct.model');
 // Get list of getproducts
 exports.index = function(req, res) {
 
-    var hello = {name:"sdsds"};
+    var articleUrl = 'http://api.shopstyle.com/api/v2/products?pid=uid8025-25655195-60&fts=red+dress&offset=0&limit=10';
+
+    var options = {
+        url:articleUrl,
+        timeout:10000
+    };
+
+    request(options,function (error, response, html){
+
+        if(!error && response.statusCode == 200){
+
+            return res.json(200, JSON.parse(response.body));
+
+//            deferred.resolve(createArticleDescrition(articleUrl,html));
+        }else{
+
+            return res.json(200,'error' );
+            console.log('error');
+//            deferred.resolve(createArticleErrorDescrition(articleUrl, error));
+        }
+    });
 
 
-
-
-    return res.json(200,hello );
+//    return res.json(200,hello );
 //  Getproduct.find(function (err, getproducts) {
 //    if(err) { return handleError(res, err); }
 //    return res.json(200, getproducts);
