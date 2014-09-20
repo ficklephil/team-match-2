@@ -29,7 +29,19 @@ angular.module('teamMatch2App')
 
         console.log(colorThief.getColor(canvasImage));
         console.log(colorThief.getPalette(canvasImage));
+
+        $scope.getShopSense();
     };
+
+        $scope.getShopSense = function(){
+            console.log('In shop sense.');
+
+            $http.get('/api/product').success(function(data) {
+                console.log(data);
+            });
+        };
+
+
 
     //HTML5 VIDEO
     // Grab elements, create settings, etc.

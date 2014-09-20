@@ -23,7 +23,9 @@
     "passport-twitter": "latest",
     "passport-google-oauth": "latest",
     "composable-middleware": "^0.3.0",
-    "connect-mongo": "^0.4.1"
+    "connect-mongo": "^0.4.1",
+    "request": "2.34.x",
+    "q": "1.0.x"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
